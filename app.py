@@ -3,15 +3,19 @@ from flask_cors import CORS
 import mysql.connector
 import json
 import requests
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
 db_config = {
-    'user': 'root',
-    'password': 'Kanha@3206',
-    'host': '127.0.0.1',
-    'database': 'recommendation_db'
+    'user': os.getenv('DB_USER'),
+    'password': os.getenv('DB_PASSWORD'),
+    'host': os.getenv('DB_HOST'),
+    'database': os.getenv('DB_NAME')
 }
 
 def get_db_connection():
