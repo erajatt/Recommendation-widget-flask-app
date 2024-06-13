@@ -91,5 +91,5 @@ def update_key_value(key):
     else:
         return "No data found", 404
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run()
